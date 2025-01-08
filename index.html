@@ -2,12 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>starWars</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header><h1>Star Wars</h1></header>
+    <section id="app">
+      <form id="warForm" action="">
+        <label id="warLabel" for="search">Search</label>
+        <input id="warInput" name="search" type="text" />
+        <button id="get">Get</button>
+      </form>
+
+      <div id="divResponse">
+        <ul id="response"></ul>
+      </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

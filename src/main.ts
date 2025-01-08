@@ -1,24 +1,24 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.scss";
+import { AllDomEl } from "./domElements/domElements";
+import * as Functions from "./functions";
+export const baseUrl: string = "https://swapi.py4e.com/api/people/?search=";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const characterInfo = await Functions.getInfoByName("Luke");
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+console.log(characterInfo.name);
+
+AllDomEl.warForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const searchName = AllDomEl.warInput.value;
+
+  const result = await Functions.getInfoByName(searchName);
+
+  const name = result.name;
+
+  const liElement = document.createElement("li");
+  liElement.classList.add("warLi");
+  liElement.textContent = name;
+  AllDomEl.warUl.appendChild(liElement);
+  AllDomEl.warInput.value = "";
+});
