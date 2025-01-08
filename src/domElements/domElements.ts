@@ -5,5 +5,7 @@ export namespace AllDomEl {
     "#warInput"
   ) as HTMLInputElement;
   export const warButton = document.querySelector("#get") as HTMLButtonElement;
-  export const warUl = document.querySelector("#response") as HTMLUListElement;
+  export const divResponse = document.querySelector(
+    "#divResponse"
+  ) as HTMLDivElement;
 }
