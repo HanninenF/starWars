@@ -31,7 +31,7 @@ html {
 
     #app {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       #warForm {
         #warLabel {
           display: inline-block;
@@ -55,29 +55,44 @@ html {
       }
 
       #divResponse {
+        border: 2px solid black;
+        width: 1236px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
         .cardContainer {
+          border-radius: 5%;
+          grid-area: auto;
           border: 2px solid red;
           padding: 16px;
-          height: 230px;
-          width: 350px;
+          min-height: 230px;
+          max-height: 280px;
+          width: 400px;
           background-color: hsl(26 59% 67% / 1);
           color: indigo;
+
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: baseline;
           .characterName {
             font-weight: normal;
           }
           .characterBirth {
             font-weight: normal;
+            margin: 0 2rem 0 0;
+            justify-self: center;
           }
           .characterAvatar {
           }
 
-          #characterUl {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+          .characterUl {
+            grid-area: 2/2/3/3;
             .warLi {
-              grid-area: auto;
-              margin: 1rem 0 1rem 1rem;
-              display: inline-block;
+              font-family: "Courier New", Courier, monospace;
+              font-weight: bold;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }

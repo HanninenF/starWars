@@ -1,6 +1,7 @@
 import { AllDomEl } from "../domElements/domElements";
 import { AllTypes } from "../types/types";
 import { createHTMLElements } from "./createHtmlElements";
+import * as Functions from "../functions";
 
 export const renderResult = (
   result: AllTypes.Result,
@@ -35,7 +36,7 @@ export const renderResult = (
   birthElement.classList.add("characterBirth");
   birthElement.textContent = birthYear;
 
-  /*   ///////////Avatar/////////
+  /*///////////Avatar/////////
   const avatarElement = createHTMLElements("img");
   avatarElement.classList.add("characterAvatar");
   avatarElement.src = avatar; */
@@ -54,7 +55,7 @@ export const renderResult = (
   for (const key in characterInfo) {
     const liElement = createHTMLElements("li");
     liElement.classList.add("warLi");
-    liElement.textContent = `${key}: ${characterInfo[key as keyof typeof characterInfo]}`;
+    liElement.textContent = `${Functions.getPrettyPrint(key)}: ${Functions.getPrettyPrint(characterInfo[key as keyof typeof characterInfo])}`;
     characterUl.appendChild(liElement);
   }
 
