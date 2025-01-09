@@ -20,7 +20,6 @@ html {
   body {
     margin: 2rem;
     header {
-      border: 2px solid red;
       display: flex;
       justify-content: center;
       h1 {
@@ -32,6 +31,7 @@ html {
     #app {
       display: flex;
       flex-direction: column;
+      align-items: center;
       #warForm {
         #warLabel {
           display: inline-block;
@@ -55,15 +55,13 @@ html {
       }
 
       #divResponse {
-        border: 2px solid black;
         width: 1236px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
         .cardContainer {
           border-radius: 5%;
-          grid-area: auto;
-          border: 2px solid red;
+          grid-area: 2 / 2 / 3 / 3;
           padding: 16px;
           min-height: 230px;
           max-height: 280px;
@@ -82,8 +80,8 @@ html {
             margin: 0 2rem 0 0;
             justify-self: center;
           }
-          .characterAvatar {
-          }
+          /* .characterAvatar {
+          } */
 
           .characterUl {
             grid-area: 2/2/3/3;

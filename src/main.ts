@@ -2,7 +2,6 @@ import "./style.scss";
 import { AllDomEl } from "./domElements/domElements";
 import * as Functions from "./functions";
 import { getHomeWorld } from "./functions/getHomeWorld";
-import { NULL } from "sass";
 
 export const baseUrl: string = "https://swapi.py4e.com/api/people/?search=";
 
